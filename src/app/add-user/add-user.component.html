@@ -1,0 +1,25 @@
+<h2 class="m-5">Create a new user</h2>
+<form [formGroup]="userData" class="m-5">
+  <div class="row">
+    <div class="col-lg-6">
+        <label for="">Id</label>
+        <input type="number" class="form-control" formControlName="id">
+      </div>
+    <div class="col-lg-6">
+      <label for="">Name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="col-lg-6">
+      <label for="">Email</label>
+      <input type="email" class="form-control" formControlName="email">
+    </div>
+
+    <div class="col-lg-6">
+      <label for="">Phoneno</label>
+      <input type="number" class="form-control" formControlName="phoneno">
+    </div>
+    <div class="col-lg-6">
+      <button class="btn btn-primary btn-small" type="submit" (click)="createUser()">Submit</button>
+    </div>
+  </div>
+</form>

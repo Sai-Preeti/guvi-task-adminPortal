@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/addUser">Add User</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<table class="table table-bordered m-3">
+    <thead>
+      <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone No</td>
+            <td></td>
+            <td></td>
+            <td></td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phoneno}}</td>
+            <td><a routerLink="/viewUser" (click)="view(user.id)">View</a></td>
+            <td><button class="btn btn-info" (click)="editUser(user.id);hideEditForm()">Edit</button></td>
+            <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Remove</button></td>
+        </tr>
+    </tbody>
+  </table>
+
+  <div class="container" *ngIf="isEditFormVisible">
+  <form [formGroup]="modifiedData" (submit)="edit()">
+    <div class="row">
+      <div class="col-lg-4">
+          <label for="">Id</label>
+          <input type="number" class="form-control" formControlName="id">
+        </div>
+      <div class="col-lg-4">
+        <label for="">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <div class="col-lg-4">
+        <label for="">Email</label>
+        <input type="email" class="form-control" formControlName="email">
+      </div>
+  
+      <div class="col-lg-4">
+        <label for="">Phoneno</label>
+        <input type="number" class="form-control" formControlName="phoneno">
+      </div>
+      <div class="col-lg-4">
+        <button class="btn btn-primary btn-small" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

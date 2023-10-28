@@ -1,0 +1,44 @@
+<main class="content">
+    <div class="container-fluid p-0">
+
+        <h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
+
+        <div class="row">
+            <div class="col-xl-6 col-xxl-5 d-flex">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <app-card [card]="cards[0]"></app-card>
+                            <app-card [card]="cards[1]"></app-card>
+                        </div>
+                        <div class="col-sm-6">
+        <app-card [card]="cards[2]"></app-card>
+                            <app-card [card]="cards[3]"></app-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-xxl-7">
+                <div class="card flex-fill w-100">
+                    <div class="card-header">
+
+                        <h5 class="card-title mb-0">Recent Movement</h5>
+                    </div>
+                    <div class="card-body py-3">
+                        <div class="chart chart-sm">
+        <canvas baseChart width="400" height="250"
+          [type]="'line'"
+          [data]="lineChartData"
+          [options]="lineChartOptions"
+          >
+        </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+    </div>
+</main> 

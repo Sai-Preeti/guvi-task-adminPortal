@@ -1,0 +1,10 @@
+<div class="container m-5">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Rs. {{product.price}}</h6>
+        <p class="card-text">{{product.description}}</p>
+        <button class="btn btn-warning" (click)="addToCart(product.id)">Add to cart</button>
+        </div>
+    </div>
+</div>

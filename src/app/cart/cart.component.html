@@ -1,0 +1,22 @@
+<ol class="list-group list-group-numbered mt-2 p-2">
+    <div
+      *ngFor="let item of cartItems">
+      <li class="list-group-item d-flex justify-content-between align-items-start p-3">
+        <div class="d-flex justify-content-start align-items-center flex-grow-1">
+          <div class="flex-grow-1">
+            <div class="fw-bold fs-5">{{item?.p?.title}}</div>
+            <div class="text-muted">Rs.{{item?.p?.price}}</div>
+            <div class="d-flex align-items-center mt-2 ms-3">
+              <i class="fa-solid fa-minus me-2" (click)="reduceQuantity(item)"></i>
+              <span class="lead" style="font-size: 1.5rem;">{{item?.quantity}}</span>
+              <i class="fa-solid fa-plus ms-2"(click)="addQuantity(item)" ></i>
+            </div>
+            <button class="btn btn-outline-danger mt-2" type="button" (click)="removeItem(item.p.id)">
+              <i class="fa fa-trash"></i>Remove
+            </button>
+          </div>
+        </div>
+      </li>
+    </div>
+  </ol>
+  <h3 class="ms-3">Total : Rs.{{total}}</h3>
